@@ -4,6 +4,23 @@ library(moments)
 #Estimation of pi
 
 set.seed(12345)
+D=5;L=2.5
+k=0;n=5000
+for(j in 1:n)
+{
+  X=runif(1,0,D/2)
+  theta=runif(1,0,pi/2)
+  if((L/2)*sin(theta)>=X)
+  {
+  k=k+1
+  }
+}
+emp_prob = k/n
+est_pi = (2*L)/(D*emp_prob) #Estimation of pi
+
+##########
+#Point Estimation
+
 est_pi=array(0)
 for (i in 1:1000)
 {
@@ -21,10 +38,7 @@ for (i in 1:1000)
   emp_prob = k/n
   est_pi[i] = (2*L)/(D*emp_prob)
 }
-est_pi
-
-##########
-#Point Estimation
+est_pi #Array of 1000 estimates of pi
 
 #Bias
 bias=mean(est_pi-3.14159)
