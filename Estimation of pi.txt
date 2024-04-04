@@ -40,8 +40,14 @@ for (i in 1:1000)
 }
 est_pi #Array of 1000 estimates of pi
 
+#Scatterplot
+plot(est_pi,col='steelblue',ylab='Estimated Values of pi')
+x=seq(-100,1100,1)
+y=x*0+3.1415
+lines(x,y,lwd=2)
+
 #Bias
-bias=mean(est_pi-3.14159)
+bias_p=mean(est_pi-3.14159)
 
 #Mean
 mean_pi=mean(est_pi)
@@ -66,10 +72,10 @@ skewness(est_pi)
 kurtosis(est_pi)
 
 #Histogram
-plot(est_pi,col='steelblue',ylab='Estimated Values of pi')
-x=seq(-100,1100,1)
-y=x*0+3.1415
-lines(x,y,lwd=2)
+hi=hist(est_pi,freq=FALSE,xlim=c(2.8,3.5),ylim=c(0,6),ylab='Freqency Density',xlab='Estimated values',col='palevioletred1')
+x = seq(min(est_pi)-0.05, max(est_pi)+0.05, length =500)
+y = dnorm(x, mean_pi, SD_pi) 
+lines(x, y, lwd = 2,col='blue4')
 
 #Boxplot
 boxplot(est_pi,col='darkolivegreen1')
