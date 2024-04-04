@@ -19,3 +19,18 @@ for (i in 1:1000)
   est_pi[i] = (2*L)/(D*emp_prob)
 }
 est_pi
+=======
+#Bias
+mean(est_pi-3.14159)
+
+#Mean
+mean(est_pi)
+
+#MSE
+mean((est_pi-3.14159)^2)
+
+#Variance
+mean((est_pi-mean(est_pi))^2)
+
+#SD
+sqrt(mean((est_pi-mean(est_pi))^2))
