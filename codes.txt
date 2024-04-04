@@ -30,6 +30,7 @@ est_pi
 mean(est_pi-3.14159)
 
 #Mean
+<<<<<<< HEAD
 mean_pi=mean(est_pi)
 
 #MSE
@@ -43,3 +44,34 @@ SD_pi=sqrt(mean((est_pi-mean(est_pi))^2))
 
 #CV
 CV_pi=mean_pi/SD_pi
+=======
+mean(est_pi)
+
+#MSE
+mean((est_pi-3.14159)^2)
+
+#Variance
+mean((est_pi-mean(est_pi))^2)
+
+#SD
+sqrt(mean((est_pi-mean(est_pi))^2))
+
+##########
+#Tests for Normality
+
+#skewness and kurtosis
+skewness(est_pi_1)
+kurtosis(est_pi_1)
+
+#Histogram
+plot(est_pi_1,col='steelblue',ylab='Estimated Values of pi')
+x=seq(-100,1100,1)
+y=x*0+3.1415
+lines(x,y,lwd=2)
+
+#Boxplot
+boxplot(est_pi_1,col='darkolivegreen1')
+
+#Normal Probability Plot
+qqnorm(est_pi_1, pch = 1, frame = FALSE)
+qqline(est_pi_1, col = "steelblue", lwd = 2)
