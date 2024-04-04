@@ -53,3 +53,23 @@ for(k in 1:1000)
    p[k]=m/2000
 }
 p #Array of 1000 estimates of e^{-1}
+
+
+#Bias
+bias_e=mean(p-0.367879)
+
+#Mean
+mean_e=mean(p)
+
+#MSE
+MSE_e=mean((p-0.367879)^2)
+
+#Variance
+Var_e=mean((p-mean(p))^2)
+
+#SD
+SD_e=sqrt(mean((p-mean(p))^2))
+
+#CV
+CV_e=mean_e/SD_e
+
