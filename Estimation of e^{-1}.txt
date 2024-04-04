@@ -89,7 +89,7 @@ kurtosis(p)
 #Histogram
 hi=hist(p,prob=TRUE,ylab='Freqency Density',xlab='Estimated values',col='palevioletred1',main='Histogram of the estimates values of e^{-1}')
 x = seq(min(p)-0.05, max(p)+0.05, length =500)
-y = dnorm(x, Mean_e, SD_e) 
+y = dnorm(x, mean_e, SD_e) 
 lines(x, y, lwd = 2,col='blue4')
 
 #Boxplot
