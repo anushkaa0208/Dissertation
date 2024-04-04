@@ -1,5 +1,8 @@
 library(moments)
 
+##########
+#Estimation of pi
+
 set.seed(12345)
 est_pi=array(0)
 for (i in 1:1000)
@@ -19,3 +22,24 @@ for (i in 1:1000)
   est_pi[i] = (2*L)/(D*emp_prob)
 }
 est_pi
+
+##########
+#Point Estimation
+
+#Bias
+mean(est_pi-3.14159)
+
+#Mean
+mean_pi=mean(est_pi)
+
+#MSE
+MSE_pi=mean((est_pi-3.14159)^2)
+
+#Variance
+Var_pi=mean((est_pi-mean(est_pi))^2)
+
+#SD
+SD_pi=sqrt(mean((est_pi-mean(est_pi))^2))
+
+#CV
+CV_pi=mean_pi/SD_pi
